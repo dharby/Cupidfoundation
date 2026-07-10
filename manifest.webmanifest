@@ -1,0 +1,10 @@
+{
+  "name": "Cupid Foundation",
+  "short_name": "Cupid",
+  "description": "Empowering communities across Nigeria and Africa.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafbf9",
+  "theme_color": "#0b2a5b",
+  "icons": [{ "src": "assets/img/favicon.png", "sizes": "64x64", "type": "image/png" }]
+}
