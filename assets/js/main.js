@@ -38,18 +38,38 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ---- Mobile menu ---- */
+  /* ---- Mobile menu (side drawer) ---- */
   var toggle = document.getElementById("navToggle");
   var links = document.getElementById("navLinks");
-  if (toggle) {
+  if (toggle && links) {
     toggle.addEventListener("click", function () {
       var open = document.body.classList.toggle("menu-open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     });
     links.addEventListener("click", function (e) {
-      if (e.target.tagName === "A") {
+      if (e.target.tagName === "A" || e.target.closest("a")) {
         document.body.classList.remove("menu-open");
         toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
+      }
+    });
+    // Close on backdrop click (click outside drawer)
+    document.addEventListener("click", function (e) {
+      if (document.body.classList.contains("menu-open") && 
+          !links.contains(e.target) && 
+          !toggle.contains(e.target)) {
+        document.body.classList.remove("menu-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
+      }
+    });
+    // Close on Escape key
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && document.body.classList.contains("menu-open")) {
+        document.body.classList.remove("menu-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
       }
     });
   }
