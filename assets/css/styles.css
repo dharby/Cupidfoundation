@@ -710,22 +710,13 @@ body.menu-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 @media (max-width: 760px) { .nav-actions .theme-toggle { display: grid; } }
 
 
-/* ============================================================
-   MOBILE ONLY - Prevent horizontal scroll & zoom
-   ============================================================ */
-html { overflow-x: hidden; }
-body { overflow-x: hidden; width: 100%; max-width: 100%; touch-action: manipulation; }
-.container { overflow-x: hidden; }
-html { -webkit-text-size-adjust: 100%; -webkit-text-size-adjust: none; text-size-adjust: none; }
-
-/* Hero stats overflow fix */
-.hero-stats { max-width: 100%; overflow-x: hidden; }
-
-/* Mobile-only styles (≤480px) - DOES NOT AFFECT DESKTOP */
 @media (max-width: 480px) {
-  html { overflow-x: hidden; }
-  body { overflow-x: hidden; width: 100%; max-width: 100%; }
+  /* Prevent horizontal scroll & zoom on mobile */
+  html { overflow-x: hidden; -webkit-text-size-adjust: 100%; -webkit-text-size-adjust: none; text-size-adjust: none; }
+  body { overflow-x: hidden; width: 100%; max-width: 100%; touch-action: manipulation; }
   .container { overflow-x: hidden; }
+
+  /* Hero stats overflow fix */
   .hero-stats { max-width: 100%; overflow-x: hidden; }
   
   /* Hero responsive */
