@@ -29,14 +29,11 @@
 
   var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---- Nav scroll state + reading progress ---- */
+  /* ---- Nav scroll state ---- */
   var nav = document.getElementById("nav");
-  var progress = document.getElementById("progress");
   function onScroll() {
     var y = window.scrollY || document.documentElement.scrollTop;
     nav.classList.toggle("scrolled", y > 30);
-    var h = document.documentElement.scrollHeight - window.innerHeight;
-    progress.style.width = (h > 0 ? (y / h) * 100 : 0) + "%";
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();

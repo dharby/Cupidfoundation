@@ -432,7 +432,7 @@ body.menu-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 .fab-donate svg { width: 18px; height: 18px; }
 
 /* ===================== STICKY PROGRESS ===================== */
-.read-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--grad-gold); z-index: 101; transition: width .1s linear; }
+
 
 /* ===================== REVEAL ANIM ===================== */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
