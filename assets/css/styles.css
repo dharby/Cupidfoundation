@@ -763,10 +763,4 @@ html { -webkit-text-size-adjust: 100%; -webkit-text-size-adjust: none; text-size
   html { -webkit-text-size-adjust: 100%; -webkit-text-size-adjust: none; text-size-adjust: none; }
 }
 
-html { overflow-x: hidden; }
-body { overflow-x: hidden; width: 100%; max-width: 100%; }
-.container { overflow-x: hidden; }
-.hero-stats { max-width: 100%; overflow-x: hidden; }
 
-html { -webkit-text-size-adjust: 100%; -webkit-text-size-adjust: none; text-size-adjust: none; }
-body { touch-action: manipulation; }
