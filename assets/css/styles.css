@@ -712,7 +712,7 @@ body.menu-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 
 @media (max-width: 480px) {
   /* Prevent horizontal scroll & zoom on mobile */
-  html { overflow-x: hidden; overflow-y: hidden; -webkit-text-size-adjust: 100%; -webkit-text-size-adjust: none; text-size-adjust: none; }
+  html { overflow-x: hidden; -webkit-text-size-adjust: 100%; -webkit-text-size-adjust: none; text-size-adjust: none; }
   body { overflow-x: hidden; overflow-y: auto; width: 100%; max-width: 100%; touch-action: manipulation; position: relative; }
   .container { overflow-x: hidden; }
 
