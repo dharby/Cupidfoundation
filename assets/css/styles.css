@@ -708,3 +708,65 @@ body.menu-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 [data-theme="dark"] .theme-toggle .i-moon { display: none; }
 [data-theme="dark"] .theme-toggle .i-sun { display: block; }
 @media (max-width: 760px) { .nav-actions .theme-toggle { display: grid; } }
+
+
+/* ============================================================
+   MOBILE ONLY - Prevent horizontal scroll & zoom
+   ============================================================ */
+html { overflow-x: hidden; }
+body { overflow-x: hidden; width: 100%; max-width: 100%; touch-action: manipulation; }
+.container { overflow-x: hidden; }
+html { -webkit-text-size-adjust: 100%; -webkit-text-size-adjust: none; text-size-adjust: none; }
+
+/* Hero stats overflow fix */
+.hero-stats { max-width: 100%; overflow-x: hidden; }
+
+/* Mobile-only styles (≤480px) - DOES NOT AFFECT DESKTOP */
+@media (max-width: 480px) {
+  html { overflow-x: hidden; }
+  body { overflow-x: hidden; width: 100%; max-width: 100%; }
+  .container { overflow-x: hidden; }
+  .hero-stats { max-width: 100%; overflow-x: hidden; }
+  
+  /* Hero responsive */
+  .hero { min-height: 100svh; padding-top: var(--nav-h); }
+  .hero h1 { font-size: clamp(2.2rem, 8vw, 3.5rem); line-height: 1.15; }
+  .hero p.lede { font-size: clamp(1rem, 4vw, 1.15rem); max-width: 100%; }
+  .hero-stats { grid-template-columns: 1fr 1fr; gap: 16px; margin-top: clamp(24px, 5vw, 40px); }
+  .stat .num { font-size: clamp(1.5rem, 5vw, 2.2rem); }
+  .stat .label { font-size: .75rem; }
+  .hero .btn-row { flex-direction: column; gap: 12px; }
+  .hero .btn { width: 100%; text-align: center; }
+  
+  /* Hero slideshow */
+  .hero-slideshow { object-fit: cover; }
+  .hero-slide { object-fit: cover; }
+  .hero-overlay { opacity: .65; }
+  
+  /* Grid layouts */
+  .grid-2, .grid-3, .grid-auto, .grid-4 { grid-template-columns: 1fr; gap: 16px; }
+  .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 200px; }
+  .gallery-grid .g.wide { grid-column: span 1; }
+  .partners { grid-template-columns: 1fr; }
+  
+  /* Section spacing */
+  .section { padding-block: clamp(40px, 8vw, 64px); }
+  
+  /* Forms & buttons */
+  .field input, .field textarea, .field select { padding: 14px 14px; font-size: 1rem; }
+  .btn { padding: 14px 20px; font-size: .95rem; min-height: 48px; }
+  .btn-lg { padding: 16px 24px; font-size: 1rem; min-height: 52px; }
+  .btn-row { flex-direction: column; gap: 12px; }
+  .btn-row .btn { width: 100%; }
+  
+  /* Prevent zoom */
+  html { -webkit-text-size-adjust: 100%; -webkit-text-size-adjust: none; text-size-adjust: none; }
+}
+
+html { overflow-x: hidden; }
+body { overflow-x: hidden; width: 100%; max-width: 100%; }
+.container { overflow-x: hidden; }
+.hero-stats { max-width: 100%; overflow-x: hidden; }
+
+html { -webkit-text-size-adjust: 100%; -webkit-text-size-adjust: none; text-size-adjust: none; }
+body { touch-action: manipulation; }
